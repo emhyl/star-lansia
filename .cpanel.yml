@@ -1,0 +1,5 @@
+---
+deployment:
+tasks:
+- export DEPLOYPATH=/home/emhy1337/public_html/antrian
+- /bin/cp -r * $DEPLOYPATH
