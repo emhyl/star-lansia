@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 31, 2022 at 10:23 AM
+-- Generation Time: Jan 02, 2023 at 02:36 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -38,8 +38,9 @@ CREATE TABLE `tbl_bantuan` (
 --
 
 INSERT INTO `tbl_bantuan` (`id`, `id_lansia`, `bulan`) VALUES
-(1, 2, 12),
-(2, 3, 11);
+(1, NULL, 12),
+(6, 4, 1),
+(7, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -49,9 +50,43 @@ INSERT INTO `tbl_bantuan` (`id`, `id_lansia`, `bulan`) VALUES
 
 CREATE TABLE `tbl_donasi` (
   `id` int(11) NOT NULL,
-  `no_rek` int(20) NOT NULL,
+  `no_rek` varchar(50) NOT NULL,
   `atas_nama` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_donasi`
+--
+
+INSERT INTO `tbl_donasi` (`id`, `no_rek`, `atas_nama`) VALUES
+(1, 'XXXX-XXXX-XXXX-XXX', 'ATAS NAMA XXXX');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_galeri`
+--
+
+CREATE TABLE `tbl_galeri` (
+  `id` int(11) NOT NULL,
+  `gambar` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_galeri`
+--
+
+INSERT INTO `tbl_galeri` (`id`, `gambar`) VALUES
+(3, 'Screenshot_from_2023-01-02_07-22-35.png'),
+(4, '91.png'),
+(5, '10.png'),
+(6, '8.png'),
+(7, '7.png'),
+(8, '6.png'),
+(9, '5.png'),
+(10, '4.png'),
+(12, '3.png'),
+(13, '1.png');
 
 -- --------------------------------------------------------
 
@@ -71,7 +106,7 @@ CREATE TABLE `tbl_komunitas` (
 --
 
 INSERT INTO `tbl_komunitas` (`id`, `nama`, `kontak`, `foto`) VALUES
-(2, 'dulcolax', '', 'bg.jpeg'),
+(2, 'dulcolax', '1212', 'bg.jpeg'),
 (4, 'asa', '089989989', 'Untitled_design.png'),
 (5, 'user', '90909', 'bg3.jpeg');
 
@@ -97,9 +132,8 @@ CREATE TABLE `tbl_lansia` (
 --
 
 INSERT INTO `tbl_lansia` (`id`, `nama`, `tgl_lahir`, `alamat`, `foto_ktp`, `NIK`, `foto_rumah`, `status`) VALUES
-(2, 'dulcolax', '2022-12-06', 'qw', 'Untitled_design.png', 2147483647, 'cv_102350.png', 'selesai'),
-(3, 'p', '2022-12-26', 'x', '60174359.png', 12121, 'CAPIL.png', 'selesai'),
-(4, 'q', '2022-12-12', 'asa', 'Untitled_design1.png', 121, 'bg_alda.png', 'belum');
+(3, 'p', '2022-12-26', 'x', '60174359.png', 12121, 'CAPIL.png', 'terima'),
+(4, 'q', '2023-12-01', 'asa', 'Untitled_design1.png', 121, 'bg_alda.png', 'terima');
 
 -- --------------------------------------------------------
 
@@ -138,6 +172,12 @@ ALTER TABLE `tbl_donasi`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_galeri`
+--
+ALTER TABLE `tbl_galeri`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_komunitas`
 --
 ALTER TABLE `tbl_komunitas`
@@ -163,13 +203,19 @@ ALTER TABLE `tbl_login`
 -- AUTO_INCREMENT for table `tbl_bantuan`
 --
 ALTER TABLE `tbl_bantuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_donasi`
 --
 ALTER TABLE `tbl_donasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_galeri`
+--
+ALTER TABLE `tbl_galeri`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_komunitas`

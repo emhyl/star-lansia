@@ -29,9 +29,13 @@
                     <a href="<?= base_url('admin/bantuan') ?>"> <i class="menu-icon fa  fa-heart"></i>Bantuan </a>
                 </li>
                 <li>
-                    <a href="widgets.html"> <i class="menu-icon fa fa-money"></i>Donatur </a>
+                    <a href="<?= base_url('admin/donasi') ?>"> <i class="menu-icon fa fa-money"></i>Donatur </a>
                 </li>
                 <!-- <li class="menu-title">Lain - Lain</li>< -->
+                <li class="menu-title">GALERI</li><!-- /.menu-title -->
+                <li>
+                    <a href="<?= base_url('admin/galeri') ?>"> <i class="menu-icon fa fa-folder-open"></i>Galeri </a>
+                </li>
                
             </ul>
         </div><!-- /.navbar-collapse -->
